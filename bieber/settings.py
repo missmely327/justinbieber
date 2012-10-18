@@ -1,7 +1,7 @@
 # Django settings for bieber project.
 import os
 
-PROJECT_ROOT = os.path.join(os.path.realpath(os.path.dirname(__file__)), '..')
+PROJECT_ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
