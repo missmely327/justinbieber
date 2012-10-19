@@ -8,9 +8,7 @@ def index(request):
 	STATIC_URL = settings.STATIC_URL
 
 	req = requests.get('https://graph.facebook.com/JustinBieber')
+	info = req.json
+	info["STATIC_URL"] = settings.STATIC_URL
 
-	name = req.json["name"]
-	cover_source = req.json["cover"]["source"]
-	likes = req.json["likes"]
-
-	return render_to_response('starter-template.html', locals())
+	return render_to_response('starter-template.html', info)
